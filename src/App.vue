@@ -40,5 +40,6 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		height: 100%;
+		background: #f7f7f7;
 	}
 </style>

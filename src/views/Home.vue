@@ -87,10 +87,27 @@
 				<div class="list-content">
 					<ul>
 						<li v-for="item in lists" :key="item.id" @click="openArticle(item)">
-							<p>{{item.title}}</p>
-							<button> > </button>
+							<div class="content-left">
+								<p>{{item.title}}</p>
+								<div class="left-number">
+									<div>
+										<img src="../assets/img/icon_comments.png" alt="">
+										<span>63</span>
+									</div>
+									<div>
+										<img src="../assets/img/icon_eye.png" alt="">
+										<span>63</span>
+									</div>
+								</div>
+							</div>
+							<img class="content-right" src="../assets/img/文章配图-3.png" alt="">
+							
 						</li>
 					</ul>
+					<div class="list-all">
+						<span>查看更多</span>
+						<img src="../assets/img/icon_arrowright-white.png" alt="">
+					</div>
 				</div>
 				
 			</div>
@@ -197,7 +214,7 @@
 					padding: 0.1rem 0.4rem;
 					border-radius: 25px;
 					box-sizing: border-box;
-					background-color: #f6f6f6;
+					background-color: #fff;
 					display: -webkit-flex;
 					align-items: center;
 
@@ -383,28 +400,70 @@
 						li {
 							display: -webkit-flex;
 							justify-content: space-between;
-							align-items: center;
-							height: 2.5rem;
-							border-bottom: 1px solid #f6f6f6;
 							
-						
-							p {
-								font-size: 1rem;
-								color: #BBBBBE;
-						
-							}
-						
-							button {
-								border: 0;
-								background-color: #fff;
-								font-size: 1rem;
-								color: #BBBBBE;
-							}
-						
+							
+							border-bottom: 1px solid #000000;
 							&:last-of-type {
 								border: 0;
 							}
+							.content-left{
+								flex: 1;
+								display: -webkit-flex;
+								flex-direction: column;
+								p {
+									flex: 1;
+									font-size:0.75rem;
+									font-family:PingFang-SC-Bold,PingFang-SC;
+									font-weight:bold;
+									color:rgba(51,51,51,1);
+									line-height:1.06rem;				
+								}
+								.left-number{
+									display: -webkit-flex;
+									justify-content: flex-end;
+									align-items: center;
+									div{
+										display: -webkit-flex;
+										align-items: center;
+										margin-right: 1rem;
+										img{
+											width: 1.2rem;
+											height:1.2rem;
+											margin-right: 0.3rem;
+										}
+										span{
+											font-size:0.75rem;
+											font-family:DIN-Medium,DIN;
+											font-weight:500;
+											color:#999999;
+											line-height:0.94rem;
+										}
+									}
+								}
+							}
+							.content-right{
+								width: 5.63rem;
+								height: 4.38rem;
+							}
 						
+						}
+					}
+					
+					.list-all{
+						margin-top: 0.7rem;
+						display: -webkit-flex;
+						justify-content: center;
+						span{
+							font-size:0.88rem;
+							font-family:PingFang-SC-Medium,PingFang-SC;
+							font-weight:500;
+							color:rgba(255,255,255,1);
+							line-height:1.25rem;
+						}
+						img{
+							width: 1.25rem;
+							height: 1.25rem;
+							vertical-align: middle;
 						}
 					}
 					

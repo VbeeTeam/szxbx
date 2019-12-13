@@ -1,7 +1,8 @@
 <template>
 	<ul class="footer">
 		<li v-for="(item,index) in tabs" :key="item.id" @click="liClick(index)">
-			<img src="../assets/img/cooper5.png" />
+			<img v-if="liIndex != index" :src="item.imgUrl1" />
+			<img v-else :src="item.imgUrl2" />
 			<span :class="{'active' : liIndex == index}">{{item.name}}</span>
 		</li>
 
@@ -25,7 +26,27 @@
 		},
 		data() {
 			return {
-				tabs: [],
+				tabs: [{
+						imgUrl1: require('../assets/img/Tabbar-icon_home_n.png'),
+						imgUrl2: require('../assets/img/Tabbar-icon_home_s.png'),
+						name: "首页"
+					},
+					{
+						imgUrl1: require('../assets/img/Tabbar-icon_class_n.png'),
+						imgUrl2: require('../assets/img/Tabbar-icon_class_s.png'),
+						name: "保险课堂"
+					},
+					{
+						imgUrl1: require('../assets/img/Tabbar-icon_product_n.png'),
+						imgUrl2: require('../assets/img/Tabbar-icon_product_s.png'),
+						name: "产品精选"
+					},
+					{
+						imgUrl1: require('../assets/img/Tabbar-icon_mine_n.png'),
+						imgUrl2: require('../assets/img/Tabbar-icon_mine_s.png'),
+						name: "我的"
+					}
+				],
 				liIndex: 0
 			}
 		},
@@ -62,9 +83,9 @@
 			}
 
 		},
-		
+
 		created() {
-			this.onLoad();
+			// this.onLoad();
 		}
 
 	}
@@ -89,21 +110,20 @@
 			text-align: center;
 
 			img {
-				width: 1.2rem;
-				height: 1.2rem;
-				margin-bottom: 0.2rem;
+				width: 2rem;
+				height: 2rem;
 			}
 
 			span {
 				display: block;
-				font-size: 1rem;
-				color: #A5A3B2;
+				font-size: 0.6rem;
+				color: #ccc;
 			}
 
 		}
 
 		.active {
-			color: #FAAC12;
+			color:#19ABFD;
 		}
 
 
